@@ -1,11 +1,15 @@
 using System;
 
 
-public static class validarDatos{
+public static class validarInformacion{
 
-    public static bool validarNombre(string Nombre, string Empresa, char telefono ){
-        if(String.Con){
-
+    public static bool validarDato(string dato){
+        
+        char[] caracteresRaros = {'!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '-', '='};
+        if(dato.IndexOfAny(caracteresRaros) ==  -1){
+            return false;
+        }else {
+            return true;
         }
 
     } 
@@ -13,4 +17,4 @@ public static class validarDatos{
 
 }
 
-// me falta validar si una cadena contiene caracteres raros, deben ser solo letras
+// me falta validar si una cadena contiene caracteres raros, deben ser solo letras --CUMPLIDO   

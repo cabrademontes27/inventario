@@ -5,8 +5,8 @@ public class Provedor{
 
     protected string? Nombre;
     protected string? Empresa;
-    protected char? Telefono;
-    public Provedor(string _nombre, string _empresa, char _telefono){
+    protected string? Telefono;
+    public Provedor(string _nombre, string _empresa, string _telefono){
         this.Nombre = _nombre;
         this.Empresa = _empresa;
         this.Telefono = _telefono;
@@ -14,8 +14,8 @@ public class Provedor{
 
 
     public void ingresarProvedor(){
-        bool 
-        while(){
+        
+        while(validarInformacion.validarDato()){
 
         }
 

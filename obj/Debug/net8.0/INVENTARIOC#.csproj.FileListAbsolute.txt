@@ -37,3 +37,4 @@ C:\Users\lowwy\OneDrive\Documentos\INVENTARIOC#\obj\Debug\net8.0\refint\INVENTAR
 C:\Users\lowwy\OneDrive\Documentos\INVENTARIOC#\obj\Debug\net8.0\INVENTARIOC#.pdb
 C:\Users\lowwy\OneDrive\Documentos\INVENTARIOC#\obj\Debug\net8.0\INVENTARIOC#.genruntimeconfig.cache
 C:\Users\lowwy\OneDrive\Documentos\INVENTARIOC#\obj\Debug\net8.0\ref\INVENTARIOC#.dll
+C:\Users\lowwy\OneDrive\Documentos\INVENTARIOC#\obj\Debug\net8.0\INVENTARIOC#.sourcelink.json
