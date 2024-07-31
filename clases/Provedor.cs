@@ -14,19 +14,50 @@ public class Provedor{
 
 
     public void ingresarProvedor(){
-        
-        while(validarInformacion.validarDato()){
+        bool validar1 = true;
+        bool validar2 = true;
+        bool validar3 = true;
 
+
+        while(validar1){
+            Console.WriteLine("Nombre del provedor");
+            Nombre = Console.ReadLine();
+            if(validarInformacion.Texto(Nombre) == false){
+                Console.WriteLine("se agrego correctamente el nombre");
+                validar1 = false;
+            }else{
+                Console.WriteLine("El texto contiene caracteres raros, intentelo nuevamente");
+            }
+        }
+
+        while(validar2){
+            Console.WriteLine("Nombre de la empresa");
+            Empresa = Console.ReadLine();
+            if(validarInformacion.Texto(Empresa) == false){
+                Console.WriteLine("se agrego correctamente la empresa");
+                validar2 = false;
+            }else{
+                Console.WriteLine("El texto contiene caracteres raros, intentelo nuevamente");
+            }
+        }
+
+    
+        while(validar3){
+            Console.WriteLine("Numero Telefonico ");
+            Telefono = Console.ReadLine();
+            if(validarInformacion.Numero(Telefono) == true){
+                Console.WriteLine("se agrego correctamente el telefono");
+                validar3 = false;
+            }else{
+                Console.WriteLine("El numero telefonico  contiene caracteres raros, intentelo nuevamente");
+            }
         }
 
 
 
-        Console.WriteLine("Nombre del provedor");
-        Nombre = Console.ReadLine();
-        Console.WriteLine("Nombre de la empresa");
-        Empresa = Console.ReadLine();
-        Console.WriteLine("Numero Telefonico ");
-        Telefono = Console.ReadLine();
+        
+        
+        
     }
 }
 
