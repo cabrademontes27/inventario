@@ -37,3 +37,5 @@ public static class conexionSQL{
         }
     }
 }
+
+// modificar esta clase para que haga la conexion con cualquier dato que entre o sea cambiar todo 

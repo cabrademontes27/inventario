@@ -3,8 +3,12 @@
 class Program{
 
     public static void Main(){
-        
-        Provedor provedor1 = new Provedor("Pepe#","GAMESA","92212208a43");
+        /*
+        FIXME
+        cambiar el constructor para que no acepte valores por defecto, o sea solo 
+        que sea mediante sus metodos
+        */ 
+        Provedor provedor1 = new Provedor("Deafault","Deafault","Deafault");
 
         provedor1.ingresarProvedor();
 

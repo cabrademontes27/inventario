@@ -6,7 +6,7 @@ public class Provedor{
     protected string? Nombre;
     protected string? Empresa;
     protected string? Telefono;
-    public Provedor(string _nombre, string _empresa, string _telefono){
+    public Provedor(string _nombreProvedor, string _empresaProvedor, string _telefonoProvedor){
         this.Nombre = _nombre;
         this.Empresa = _empresa;
         this.Telefono = _telefono;
@@ -61,4 +61,5 @@ public class Provedor{
     }
 }
 
-// me falta terminar la clase que valide si los datos ingresados son texto
+// me falta terminar la clase que valide si los datos ingresados son texto -- HECHO
+// empezar a pasar los datos a la base de datos, y separa la clase conxion o hacerlo mas sencilla
