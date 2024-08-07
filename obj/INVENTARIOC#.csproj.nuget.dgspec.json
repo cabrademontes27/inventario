@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/home/luiscabrera/Documentos/codigos/Inventario/inventario/INVENTARIOC#.csproj": {}
+    "C:\\Users\\lowwy\\OneDrive\\Documentos\\INVENTARIOC#\\INVENTARIOC#.csproj": {}
   },
   "projects": {
-    "/home/luiscabrera/Documentos/codigos/Inventario/inventario/INVENTARIOC#.csproj": {
+    "C:\\Users\\lowwy\\OneDrive\\Documentos\\INVENTARIOC#\\INVENTARIOC#.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/luiscabrera/Documentos/codigos/Inventario/inventario/INVENTARIOC#.csproj",
+        "projectUniqueName": "C:\\Users\\lowwy\\OneDrive\\Documentos\\INVENTARIOC#\\INVENTARIOC#.csproj",
         "projectName": "INVENTARIOC#",
-        "projectPath": "/home/luiscabrera/Documentos/codigos/Inventario/inventario/INVENTARIOC#.csproj",
-        "packagesPath": "/home/luiscabrera/.nuget/packages/",
-        "outputPath": "/home/luiscabrera/Documentos/codigos/Inventario/inventario/obj/",
+        "projectPath": "C:\\Users\\lowwy\\OneDrive\\Documentos\\INVENTARIOC#\\INVENTARIOC#.csproj",
+        "packagesPath": "C:\\Users\\lowwy\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\lowwy\\OneDrive\\Documentos\\INVENTARIOC#\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/luiscabrera/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\lowwy\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -32,6 +32,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -59,7 +64,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.107/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

@@ -22,26 +22,26 @@ public class Provedor{
         bool validar2 = true;
         bool validar3 = true;
 
-
+        // agregar validacion sobre si el valor a recibir es nulo
         while(validar1){
             Console.WriteLine("Nombre del provedor");
             Nombre = Console.ReadLine();
-            if(validarInformacion.Texto(Nombre) == false){
+            if(!string.IsNullOrEmpty(Nombre) &&validarInformacion.Nombres(Nombre) == false){
                 Console.WriteLine("se agrego correctamente el nombre");
                 validar1 = false;
             }else{
-                Console.WriteLine("El texto contiene caracteres raros, intentelo nuevamente");
+                Console.WriteLine("El texto contiene caracteres raros o esta ingresando texto vacio, intentelo nuevamente");
             }
         }
 
         while(validar2){
             Console.WriteLine("Nombre de la empresa");
             Empresa = Console.ReadLine();
-            if(validarInformacion.Texto(Empresa) == false){
+            if(!string.IsNullOrEmpty(Empresa) && validarInformacion.Nombres(Empresa) == false){
                 Console.WriteLine("se agrego correctamente la empresa");
                 validar2 = false;
             }else{
-                Console.WriteLine("El texto contiene caracteres raros, intentelo nuevamente");
+                Console.WriteLine("El texto contiene caracteres raros o esta ingresando texto vacio, intentelo nuevamente");
             }
         }
 
@@ -49,11 +49,12 @@ public class Provedor{
         while(validar3){
             Console.WriteLine("Numero Telefonico ");
             Telefono = Console.ReadLine();
-            if(validarInformacion.Numero(Telefono) == true){
+          
+            if( !string.IsNullOrEmpty(Telefono) && validarInformacion.Telefonos(Telefono)){
                 Console.WriteLine("se agrego correctamente el telefono");
                 validar3 = false;
             }else{
-                Console.WriteLine("El numero telefonico  contiene caracteres raros, intentelo nuevamente");
+                Console.WriteLine("El numero telefonico  contiene caracteres raros o ingreso un numero de mas, intentelo nuevamente");
             }
         }
 
