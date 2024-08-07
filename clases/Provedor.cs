@@ -3,14 +3,18 @@ using System;
 
 public class Provedor{
 
+    
     protected string? Nombre;
     protected string? Empresa;
     protected string? Telefono;
+    /*
     public Provedor(string _nombreProvedor, string _empresaProvedor, string _telefonoProvedor){
         this.Nombre = _nombre;
         this.Empresa = _empresa;
         this.Telefono = _telefono;
     }
+    */
+    // al parecer se puede omitir para no agregarle valores,
 
 
     public void ingresarProvedor(){

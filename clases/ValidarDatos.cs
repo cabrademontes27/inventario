@@ -3,7 +3,7 @@ using System;
 
 public static class validarInformacion{
 
-    public static bool Texto(string texto){
+    public static bool Texto(string? texto){
         
         //-1 indica que no hay caracteres raros
         char[] caracteresRaros = {'!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '-', '='};
@@ -14,7 +14,7 @@ public static class validarInformacion{
         }
     } 
 
-    public static bool Numero(string numero){
+    public static bool Numero(string? numero){
         
         char[] numerosValidos = {'0','1','2','3','4','5','6','7','8','9'};
         

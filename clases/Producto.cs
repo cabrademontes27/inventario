@@ -8,7 +8,7 @@ public class Producto{
     protected int? Precio;
     protected string? caducidad;
     protected string? Provedor;
-    public Producto(string? _nombreProducto int? _precioProducto, string? _caducidadProducto, string? _provedorProducto){
+    public Producto(string? _nombreProducto, int? _precioProducto, string? _caducidadProducto, string? _provedorProducto){
         this.Nombre = _nombreProducto;
         this.Precio = _precioProducto;
         this.caducidad = _caducidadProducto;
@@ -19,7 +19,9 @@ public class Producto{
 
 
     public void integrarProducto(){
-            
+            Console.WriteLine("Nombre del producto");
+
+
     }
 
 
