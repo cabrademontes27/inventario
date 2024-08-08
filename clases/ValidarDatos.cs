@@ -14,15 +14,15 @@ public static class validarInformacion{
         }
     } 
 
-    public static bool Telefonos(string numero){
-        int longitud = numero.Length;
+    public static bool Telefonos(string numeroTelefonico){
+        int longitud = numeroTelefonico.Length;
         char[] numerosValidos = {'0','1','2','3','4','5','6','7','8','9'};
         
         if(longitud == 10){
             //el -1 aqui indica que si hay otros valores no permitidos 
-            foreach(char c in numero){
-                if(Array.IndexOf(numerosValidos, c) == -1){
-                return false;
+            foreach(char c in numeroTelefonico){
+                    if(Array.IndexOf(numerosValidos, c) == -1){
+                    return false;
                 }
             }
             return true;
@@ -30,6 +30,26 @@ public static class validarInformacion{
             return false;
         }  
     }
+
+    public static bool Numeros(string numeros){
+        char[] numerosValidos = {'0','1','2','3','4','5','6','7','8','9'};
+        
+        int longitud = numeros.Length;
+        if(longitud >= 0 && longitud <= 5){
+            foreach(char c in numeros){
+                if(Array.IndexOf(numerosValidos, c) == -1){
+                return false;
+            }
+        }
+            return true;
+        }else{
+            return false;
+        }
+
+        
+    }
+
+
 
 }
 //Para validar caracter

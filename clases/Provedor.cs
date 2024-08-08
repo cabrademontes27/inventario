@@ -22,7 +22,7 @@ public class Provedor{
         bool validar2 = true;
         bool validar3 = true;
 
-        // agregar validacion sobre si el valor a recibir es nulo
+        // agregar validacion sobre si el valor a recibir es nulo o vacio -- CUMPLIDO
         while(validar1){
             Console.WriteLine("Nombre del provedor");
             Nombre = Console.ReadLine();
