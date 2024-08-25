@@ -1706,19 +1706,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\lowwy\\.nuget\\packages\\": {}
+    "/home/luiscabrera/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\lowwy\\OneDrive\\Documentos\\INVENTARIOC#\\INVENTARIOC#.csproj",
+      "projectUniqueName": "/home/luiscabrera/Documentos/codigos/INVENTARIOC#.csproj",
       "projectName": "INVENTARIOC#",
-      "projectPath": "C:\\Users\\lowwy\\OneDrive\\Documentos\\INVENTARIOC#\\INVENTARIOC#.csproj",
-      "packagesPath": "C:\\Users\\lowwy\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\lowwy\\OneDrive\\Documentos\\INVENTARIOC#\\obj\\",
+      "projectPath": "/home/luiscabrera/Documentos/codigos/INVENTARIOC#.csproj",
+      "packagesPath": "/home/luiscabrera/.nuget/packages/",
+      "outputPath": "/home/luiscabrera/Documentos/codigos/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\lowwy\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "/home/luiscabrera/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -1736,11 +1736,6 @@
         "warnAsError": [
           "NU1605"
         ]
-      },
-      "restoreAuditProperties": {
-        "enableAudit": "true",
-        "auditLevel": "low",
-        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -1768,7 +1763,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.108/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

@@ -1,65 +1,68 @@
 using System;
 
-
-public class Producto{
-
-
-    protected string? Nombre;
-    protected string? Precio;
-    protected string? caducidad;
-    protected string? Provedor;
-
-    /*
-    public Producto(string? _nombreProducto, int? _precioProducto, string? _caducidadProducto, string? _provedorProducto){
-        this.Nombre = _nombreProducto;
-        this.Precio = _precioProducto;
-        this.caducidad = _caducidadProducto;
-        this.Provedor = _provedorProducto;
-    }
-    */
+public abstract class Producto
+{
+    protected string Nombre = "";
+    protected string Precio = "";
     
+    protected Producto(string _Nombre, string _Precio)
+    {
+        this.Nombre = _Nombre;
+        this.Precio = _Precio;
+    }
+
+    public abstract void IngresarBaseDeDatos();
+
+}
 
 
-    public void IntegrarProducto(){
-        bool validar1 = true;
-        bool validar2 = true;
-        bool validar3 = true;
+// no esta bien hacer las clases aqui juntas, por eso se dividen pero x
 
+public class Bebidas : Producto 
+{
+    private double Litros;
+    private string Caducidad;
 
+    public Bebidas(string _Nombre, string _Precio, double _Litros, string _Caducidad) : base(_Nombre,_Precio)
+    {
+        this.Litros = _Litros;
+        this.Caducidad = _Caducidad;
+    }
 
-        while(validar1){
-            Console.WriteLine("Nombre del producto");
-            Nombre = Console.ReadLine();
-
-            if(!string.IsNullOrEmpty(Nombre) && validarInformacion.Nombres(Nombre)){
-                Console.WriteLine("Se agrego correctamente el producto");
-                validar1 = false;
-            }else{
-                Console.WriteLine("El texto contiene caracteres raros o esta ingresando texto vacio, intentelo nuevamente");
-            }
-        }
-        
-        while(validar2){
-            Console.WriteLine("precio del producto");
-            Precio = Console.ReadLine();
-
-            if(!string.IsNullOrEmpty(Precio) && validarInformacion.Numeros(Precio)){
-                Console.WriteLine("Se agrego correctamente el precio del producto");
-                validar1 = false;
-            }else{
-                Console.WriteLine("El precio contiene caracteres raros o esta ingresando texto vacio, intentelo nuevamente");
-            }
-        }
-        //este sera sobre provedor, pero no entiendo como se supone si en una base de datos esta clase o aqui seria su llave foranea de la clase provedor 
-        //deberia hacer que reciviera o una comparacion y si es alguno de los provedores, asignarle un id ????/
-        while(validar3){
-            
-        }
-
-
-
-
-
-
+    public override void  IngresarBaseDeDatos()
+    {
+        // aqui se metera a la base de datos
     }
 }
+
+public class Abarrotes : Producto
+{
+    private string Proveedor;
+    private string Caducidad;
+    public Abarrotes(string _Nombre, string _Precio, string _Proveedor, string _Caducidad) : base(_Nombre, _Precio) 
+    {
+        this.Proveedor = _Proveedor;
+        this.Caducidad = _Caducidad;
+    }
+
+    public override void IngresarBaseDeDatos()
+    {
+        //se ingresara a la base de datos
+    }
+}
+
+public class FrutasVerduras : Producto 
+{
+    private string FechaCompra;
+    public FrutasVerduras(string _Nombre, string _Precio, string _FechaCompra) : base(_Nombre , _Precio) 
+    {
+        this.FechaCompra = _FechaCompra;
+    }
+
+    public override void IngresarBaseDeDatos()
+    {
+        // se ingresa a la database
+    }
+}
+
+
