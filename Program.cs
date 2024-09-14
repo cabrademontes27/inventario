@@ -1,13 +1,12 @@
 ﻿using System;
+using Productos;
 
 class Program{
 
     public static void Main(){
         
-        InteraccionUsario interaccionUsario1 = new InteraccionUsario();
-
-        interaccionUsario1.Opciones();
-        
+        Producto productos = new Producto("Gansito", 15.50);
+        productos.MostrarProducto();
 
 
         

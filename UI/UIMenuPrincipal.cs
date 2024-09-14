@@ -1,16 +1,17 @@
 using System;
 using Org.BouncyCastle.Crypto.Engines;
-
+using Productos;
 public class InteraccionUsario
 {
-    public int Opciones()
+    /*
+        public void Opciones()
     {
         string? opcion = "";
         bool validadorBucle = true;
         
         Console.WriteLine("------------------------------------MENU------------------------------------");
-        Console.WriteLine("Hola, que categoria desea visualizar");
-        Console.WriteLine(" 1) Abarrotes \n 2) Frutas y verduras \n 3) Bebidas");
+        Console.WriteLine("Bienvenido al inventario");
+        Console.WriteLine(" 1) Mostrar productos \n 2) Agregar productos \n 3) Eliminar productos \n 4) salir");
         
         while(validadorBucle)
         {
@@ -20,15 +21,18 @@ public class InteraccionUsario
                 int retornar = Convert.ToInt16(opcion);
                     switch(retornar)
                     {
-                        case 1: validadorBucle = false; return 1;
-                        case 2: validadorBucle = false; return 2;
-                        case 3: validadorBucle = false; return 3;
+                        case 1: validadorBucle = false; break;
+                        case 2: validadorBucle = false; break;
+                        case 3: validadorBucle = false; break;
+
                         default: Console.WriteLine("Seleccione una de las opciones");break;
                     }
             } 
         }  
-        return 0;
     }
+    */
+
+
 
     
 

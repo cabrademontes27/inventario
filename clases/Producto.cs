@@ -1,68 +1,112 @@
 using System;
+using System.Collections;
+using ValidarDatos;
+namespace Productos;
 
-public abstract class Producto
+
+public class Producto
 {
-    protected string Nombre = "";
-    protected string Precio = "";
+    private String Nombre = "";
+    private double Precio = 0.0;
+    private String  Categoria ="";
+    private String FechaIngreso = ""; 
     
-    protected Producto(string _Nombre, string _Precio)
+    List<Producto> MisProductos = new List<Producto>();
+    
+    public Producto(String Nombre, double Precio,String Categoria, String FechaIngreso)
     {
-        this.Nombre = _Nombre;
-        this.Precio = _Precio;
+        this.Nombre = Nombre;
+        this.Precio = Precio;
+        this.Categoria = Categoria;
+        this.FechaIngreso = FechaIngreso;
     }
 
-    public abstract void IngresarBaseDeDatos();
+    public Producto(String Nombre, double Precio,String Categoria)
+    {
+        this.Nombre = Nombre;
+        this.Precio = Precio;
+        this.Categoria = Categoria;
+    }
+
+    public Producto(String Nombre, double Precio)
+    {
+        this.Nombre = Nombre;
+        this.Precio = Precio;
+    }
+
+
+    //get y set
+    public String GetNombreProducto()
+    {
+        return this.Nombre;
+    }
+
+    public double GetPrecioProducto()
+    {
+        return this.Precio;
+    }
+    public String GetCategoriaProducto()
+    {
+        return this.Categoria;
+    }
+    public String GetFechaIngresoProducto()
+    {
+        return this.FechaIngreso;
+    }
+
+    public void setNombreProducto(String Nombre)
+    {
+        this.Nombre = Nombre;
+    }
+
+    public void setPrecioProducto(double Precio)
+    {
+        this.Precio = Precio;
+    }
+
+    public void setCategoriaProducto(String Categoria)
+    {
+        this.Categoria = Categoria;
+    }
+
+    public void setFechaIngresoProducto(String FechaIngreso)
+    {
+        this.FechaIngreso = FechaIngreso;
+    }
+
+
+
+    public void AñadirProductos()
+    {
+        
+    }
+
+
+
+
+
+
+
+
+
+    public void MostrarProducto()
+    {
+        Console.WriteLine($"El producto agregado fue: {Nombre} \nSu precio es de: ${Precio} \nSu categoria: {Categoria} \nCon fecha de ingreso de: {FechaIngreso}");
+    }
+
+
+
+
+
+
 
 }
 
 
-// no esta bien hacer las clases aqui juntas, por eso se dividen pero x
 
-public class Bebidas : Producto 
-{
-    private double Litros;
-    private string Caducidad;
 
-    public Bebidas(string _Nombre, string _Precio, double _Litros, string _Caducidad) : base(_Nombre,_Precio)
-    {
-        this.Litros = _Litros;
-        this.Caducidad = _Caducidad;
-    }
 
-    public override void  IngresarBaseDeDatos()
-    {
-        // aqui se metera a la base de datos
-    }
-}
 
-public class Abarrotes : Producto
-{
-    private string Proveedor;
-    private string Caducidad;
-    public Abarrotes(string _Nombre, string _Precio, string _Proveedor, string _Caducidad) : base(_Nombre, _Precio) 
-    {
-        this.Proveedor = _Proveedor;
-        this.Caducidad = _Caducidad;
-    }
 
-    public override void IngresarBaseDeDatos()
-    {
-        //se ingresara a la base de datos
-    }
-}
-
-public class FrutasVerduras : Producto 
-{
-    private string FechaCompra;
-    public FrutasVerduras(string _Nombre, string _Precio, string _FechaCompra) : base(_Nombre , _Precio) 
-    {
-        this.FechaCompra = _FechaCompra;
-    }
-
-    public override void IngresarBaseDeDatos()
-    {
-        // se ingresa a la database
-    }
-}
 
 

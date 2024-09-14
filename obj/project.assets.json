@@ -1711,11 +1711,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/luiscabrera/Documentos/codigos/INVENTARIOC#.csproj",
+      "projectUniqueName": "/home/luiscabrera/Documentos/INVENTARIO/INVENTARIOC#.csproj",
       "projectName": "INVENTARIOC#",
-      "projectPath": "/home/luiscabrera/Documentos/codigos/INVENTARIOC#.csproj",
+      "projectPath": "/home/luiscabrera/Documentos/INVENTARIO/INVENTARIOC#.csproj",
       "packagesPath": "/home/luiscabrera/.nuget/packages/",
-      "outputPath": "/home/luiscabrera/Documentos/codigos/obj/",
+      "outputPath": "/home/luiscabrera/Documentos/INVENTARIO/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/luiscabrera/.nuget/NuGet/NuGet.Config"

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "w8DzJziEA0LntQ8ZS09Anvp0rcJ+cAL9x0dL9GokOxjxncTLTYXjaZUbU6A7Jfn4BmrKk1K3eKLod7wz2jCr8Q==",
+  "dgSpecHash": "SWDsdrQaE45fkKceUwe8dNzvhaCgRUU5MPgWWZJ6jmUwC7FBm9D9mTsTQ3naFxjUfMwzZrBkiNvBYGERRXDHNQ==",
   "success": true,
-  "projectFilePath": "/home/luiscabrera/Documentos/codigos/INVENTARIOC#.csproj",
+  "projectFilePath": "/home/luiscabrera/Documentos/INVENTARIO/INVENTARIOC#.csproj",
   "expectedPackageFiles": [
     "/home/luiscabrera/.nuget/packages/google.protobuf/3.21.9/google.protobuf.3.21.9.nupkg.sha512",
     "/home/luiscabrera/.nuget/packages/k4os.compression.lz4/1.3.5/k4os.compression.lz4.1.3.5.nupkg.sha512",

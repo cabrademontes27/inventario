@@ -1,5 +1,5 @@
 using System;
-
+namespace ValidarDatos;
 
 public static class validarInformacion{
 
@@ -72,6 +72,14 @@ public static class validarInformacion{
                 return false;
             }else{Console.WriteLine("El dato ingresado contien caracteres raros, intete nuevamente"); return true;}
         }else{Console.WriteLine("El valor es nulo o contiene nada, intente nuevamente"); return true;}
+    }
+
+    public static String FechaParciada(String fechaIngresada)
+    {
+        DateTime fecha = DateTime.Parse(fechaIngresada);
+        
+        
+       return fecha.ToString("dd/MM/yyyy");
     }
 
 
