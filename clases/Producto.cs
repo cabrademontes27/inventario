@@ -100,7 +100,8 @@ public class Producto
     {
         foreach(Producto producto in MisProductos)
         {
-            Console.WriteLine($"{producto.Nombre}, {producto.Precio},{producto.Categoria},{producto.FechaIngreso}");
+            Console.WriteLine($"Nombre: {producto.Nombre} \nPrecio: {producto.Precio} \nCategoria: {producto.Categoria} \n Fecha de ingreso: {producto.FechaIngreso}");
+            Console.WriteLine("\n");
         }
     }
 
