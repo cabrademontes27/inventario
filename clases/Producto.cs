@@ -33,6 +33,10 @@ public class Producto
         this.Nombre = Nombre;
         this.Precio = Precio;
     }
+    public Producto()
+    {
+
+    }
 
 
     //get y set
@@ -76,14 +80,33 @@ public class Producto
 
 
 
-    public void AñadirProductos()
+    public void AñadirProductos(String Nombre, double Precio,String Categoria, String FechaIngreso)
     {
-        
+        MisProductos.Add(new Producto(Nombre,Precio,Categoria,FechaIngreso));
+    }
+    public void AñadirProductos(String Nombre, double Precio,String Categoria)
+    {
+        MisProductos.Add(new Producto(Nombre,Precio,Categoria));
+    }
+    public void AñadirProductos(String Nombre, double Precio)
+    {
+        MisProductos.Add(new Producto(Nombre,Precio));
     }
 
 
 
 
+    public void MostrarListaDeProductos()
+    {
+        foreach(Producto producto in MisProductos)
+        {
+            Console.WriteLine($"{producto.Nombre}, {producto.Precio},{producto.Categoria},{producto.FechaIngreso}");
+        }
+    }
+
+
+
+    
 
 
 
