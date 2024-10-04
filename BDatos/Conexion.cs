@@ -1,54 +1,76 @@
-/*
+
 using System;
 using MySql.Data.MySqlClient;
 using Org.BouncyCastle.Cms;
 
 
 public static class conexionSQL{
-    public static void conexion(){
 
-        string conexcionString = "Server=localhost;Database=inventario;User ID=root;Password=2704;SslMode=none;";
 
-        using (MySqlConnection conn = new MySqlConnection(conexcionString))
+    public static void AnadirProductos(string Nombre, string Categoria, string Precio, string Fecha_Ingreso)
+    {
+        string Conexion = "Server=localhost;Database=INVENTARIO;User ID=root;Password= ;SslMode=none";
+        
+        using(MySqlConnection conexion1 = new MySqlConnection(Conexion))
         {
             try
             {
-                // Abrir la conexión
-                conn.Open();
+                conexion1.Open();
+                string consulta = $"INSERT INTO PRODUCTO(Nombre, categoria,Precio,Fecha_ingreso) VALUES({Nombre},{Categoria},{Precio},{Fecha_Ingreso})";
+                MySqlCommand ejercutarConsulta = new MySqlCommand(consulta,conexion1);
 
-                // Crear un comando
-                //consulta = "SELECT * FROM productos";
-                MySqlCommand cmd = new MySqlCommand(consulta, conn);
-
-                // Ejecutar el comando y obtener un lector de datos
-                using (MySqlDataReader reader = cmd.ExecuteReader())
+                using(MySqlDataReader almacenarConsuta = ejercutarConsulta.ExecuteReader())
                 {
-                    while (reader.Read())
-                    {
-                        // Leer los datos (ejemplo: primera columna como string)
-                        string valor = reader.GetString(1);
-                        Console.WriteLine(valor);
-                    }
+                    
                 }
+
             }
-            catch (Exception ex)
+            catch(Exception ex)
             {
-                Console.WriteLine("Error: " + ex.Message);
+                
             }
         }
     }
 
-    public static void addProductDatabase()
+
+    public static void VisualizarProductos()
     {
+        string Conexion = "Server=localhost;Database=INVENTARIO;User ID=root;Password= ;SslMode=none";
 
+        //es usado para que cuando el objeto o funcion deja de usarse 
+        //se cierre una vez terminado el bloque
+        using(MySqlConnection conexion1 = new MySqlConnection(Conexion))
+        {
+            try
+            {
+                conexion1.Open();
+                string consulta = "SELECT Nombre,categoria,Precio,Fecha_ingreso FROM PRODUCTO";
+                MySqlCommand ejecutarConsulta = new MySqlCommand(consulta,conexion1);
+
+                using(MySqlDataReader almacenaConsulta = ejecutarConsulta.ExecuteReader())
+                {
+                    while(almacenaConsulta.Read())
+                    {
+                       Console.WriteLine($"Nombre:  {almacenaConsulta.GetString(0)}");
+                       Console.WriteLine($"Categoria: {almacenaConsulta.GetString(1)}");
+                       Console.WriteLine($"Precio: {almacenaConsulta.GetString(2)}");
+                       Console.WriteLine($"Fecha de ingreso: {almacenaConsulta.GetString(3)}");
+                       Console.WriteLine("\n ");
+                    }
+                }
+
+            }   
+            catch(Exception ex)
+            {
+                Console.WriteLine($"Ocurrio algo inesperado: {ex}" );
+            }     
+        }
     }
-
-    public static void delateProductDatabase()
-    {
+}
 
 
-    }
 
+/*
     public static void readProductDatabase(string consulta, string columna  )
     {
         string conecxionTexto = "Server=localhost;Database=inventario;User ID=root;Password=2704;SslMode=none;";
@@ -87,7 +109,5 @@ public static class conexionSQL{
 
 
 }
-
-// modificar esta clase para que haga la conexion con cualquier dato que entre o sea cambiar todo 
-
 */
+// modificar esta clase para que haga la conexion con cualquier dato que entre o sea cambiar todo 

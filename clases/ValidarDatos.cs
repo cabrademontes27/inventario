@@ -82,6 +82,8 @@ public static class validarInformacion{
        return fecha.ToString("dd/MM/yyyy");
     }
 
+    
+
 
 
 }

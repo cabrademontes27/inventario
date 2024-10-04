@@ -33,9 +33,10 @@ public class Producto
         this.Nombre = Nombre;
         this.Precio = Precio;
     }
+
     public Producto()
     {
-
+        
     }
 
 
@@ -80,45 +81,18 @@ public class Producto
 
 
 
-    public void AñadirProductos(String Nombre, double Precio,String Categoria, String FechaIngreso)
+    public void AñadirProductosLista(String Nombre, double Precio,String Categoria, String FechaIngreso)
     {
         MisProductos.Add(new Producto(Nombre,Precio,Categoria,FechaIngreso));
     }
-    public void AñadirProductos(String Nombre, double Precio,String Categoria)
+    public void AñadirProductosLista(String Nombre, double Precio,String Categoria)
     {
         MisProductos.Add(new Producto(Nombre,Precio,Categoria));
     }
-    public void AñadirProductos(String Nombre, double Precio)
+    public void AñadirProductosLista(String Nombre, double Precio)
     {
         MisProductos.Add(new Producto(Nombre,Precio));
     }
-
-
-
-
-    public void MostrarListaDeProductos()
-    {
-        foreach(Producto producto in MisProductos)
-        {
-            Console.WriteLine($"Nombre: {producto.Nombre} \nPrecio: {producto.Precio} \nCategoria: {producto.Categoria} \n Fecha de ingreso: {producto.FechaIngreso}");
-            Console.WriteLine("\n");
-        }
-    }
-
-
-
-    
-
-
-
-
-
-    public void MostrarProducto()
-    {
-        Console.WriteLine($"El producto agregado fue: {Nombre} \nSu precio es de: ${Precio} \nSu categoria: {Categoria} \nCon fecha de ingreso de: {FechaIngreso}");
-    }
-
-
 
 
 
