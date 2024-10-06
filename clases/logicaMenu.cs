@@ -21,9 +21,17 @@ public static class LogicaDelMenu
         Console.WriteLine("Ingrese la categoria del producto");
         categoria = Console.ReadLine();
                 //fecha de ingreso, se colocara en automatico una vez ingresado   
+        if(string.IsNullOrEmpty(nombre))
+        {
+            if(string.IsNullOrEmpty(ca))
+            {
 
-        
-        
+            }
+        }
+        else
+        {
+            Console.WriteLine("EL nombre esta vacio, ingrese un nombre al producto");
+        }
     }
 
 

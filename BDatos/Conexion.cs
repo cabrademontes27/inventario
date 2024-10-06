@@ -7,8 +7,9 @@ using Org.BouncyCastle.Cms;
 public static class conexionSQL{
 
 
-    public static void AnadirProductos(string Nombre, string Categoria, string Precio, string Fecha_Ingreso)
+    public static void AnadirProductos(string Nombre, string Categoria, string Precio)
     {
+        DateTime Fecha_Ingreso = DateTime.Now;
         string Conexion = "Server=localhost;Database=INVENTARIO;User ID=root;Password= ;SslMode=none";
         
         using(MySqlConnection conexion1 = new MySqlConnection(Conexion))
@@ -16,21 +17,53 @@ public static class conexionSQL{
             try
             {
                 conexion1.Open();
-                string consulta = $"INSERT INTO PRODUCTO(Nombre, categoria,Precio,Fecha_ingreso) VALUES({Nombre},{Categoria},{Precio},{Fecha_Ingreso})";
-                MySqlCommand ejercutarConsulta = new MySqlCommand(consulta,conexion1);
-
-                using(MySqlDataReader almacenarConsuta = ejercutarConsulta.ExecuteReader())
+                string consulta = $"INSERT INTO PRODUCTO(Nombre, categoria,Precio,Fecha_ingreso) VALUES(@Nombre, @Categoria,@Precio,@Fecha_Ingreso)";
+                
+                using(MySqlCommand ejercutarConsulta = new MySqlCommand(consulta,conexion1))
                 {
-                    
+                    ejercutarConsulta.Parameters.AddWithValue("@Nombre",Nombre);
+                    ejercutarConsulta.Parameters.AddWithValue("@Categoria",Categoria);
+                    ejercutarConsulta.Parameters.AddWithValue("@Precio",Precio);
+                    ejercutarConsulta.Parameters.AddWithValue("@Fecha_Ingreso",Fecha_Ingreso);
+
                 }
 
             }
             catch(Exception ex)
             {
-                
+                Console.WriteLine($"Ocurrio algo inesperado {ex}");
             }
         }
     }
+
+     public static void AnadirProductos(string Nombre, string Precio)
+    {
+        DateTime Fecha_Ingreso = DateTime.Now;
+        string Conexion = "Server=localhost;Database=INVENTARIO;User ID=root;Password= ;SslMode=none";
+        
+        using(MySqlConnection conexion1 = new MySqlConnection(Conexion))
+        {
+            try
+            {
+                conexion1.Open();
+                string consulta = $"INSERT INTO PRODUCTO(Nombre, Precio, Fecha_ingreso) VALUES(@Nombre,@Precio,@Fecha_Ingreso)";
+                
+                using(MySqlCommand ejercutarConsulta = new MySqlCommand(consulta,conexion1))
+                {
+                    ejercutarConsulta.Parameters.AddWithValue("@Nombre",Nombre);
+                    ejercutarConsulta.Parameters.AddWithValue("@Precio",Precio);
+                    ejercutarConsulta.Parameters.AddWithValue("@Fecha_Ingreso",Fecha_Ingreso);
+
+                }
+
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine($"Ocurrio algo inesperado {ex}");
+            }
+        }
+    }
+
 
 
     public static void VisualizarProductos()
