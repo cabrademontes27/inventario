@@ -2,6 +2,7 @@
 using System;
 using MySql.Data.MySqlClient;
 using Org.BouncyCastle.Cms;
+using Productos;
 
 
 public static class conexionSQL{
@@ -36,9 +37,8 @@ public static class conexionSQL{
         }
     }
 
-     public static void AnadirProductos(string Nombre, string Precio)
+     public static void AnadirProductos(Producto producto)
     {
-        DateTime Fecha_Ingreso = DateTime.Now;
         string Conexion = "Server=localhost;Database=INVENTARIO;User ID=root;Password= ;SslMode=none";
         
         using(MySqlConnection conexion1 = new MySqlConnection(Conexion))
@@ -46,14 +46,14 @@ public static class conexionSQL{
             try
             {
                 conexion1.Open();
-                string consulta = $"INSERT INTO PRODUCTO(Nombre, Precio, Fecha_ingreso) VALUES(@Nombre,@Precio,@Fecha_Ingreso)";
+                string consulta = $"INSERT INTO PRODUCTO(Nombre,Categoria,Precio,Fecha_ingreso) VALUES(@Nombre,@Categoria,@Precio,@Fecha_Ingreso)";
                 
                 using(MySqlCommand ejercutarConsulta = new MySqlCommand(consulta,conexion1))
                 {
-                    ejercutarConsulta.Parameters.AddWithValue("@Nombre",Nombre);
-                    ejercutarConsulta.Parameters.AddWithValue("@Precio",Precio);
-                    ejercutarConsulta.Parameters.AddWithValue("@Fecha_Ingreso",Fecha_Ingreso);
-
+                    ejercutarConsulta.Parameters.AddWithValue("@Nombre",producto.GetNombreProducto());
+                    ejercutarConsulta.Parameters.AddWithValue("@Categoria",producto.GetCategoriaProducto());
+                    ejercutarConsulta.Parameters.AddWithValue("@Precio",producto.GetPrecioProducto());
+                    ejercutarConsulta.Parameters.AddWithValue("@Fecha_Ingreso",producto.GetFechaIngresoProducto());
                 }
 
             }

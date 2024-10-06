@@ -14,6 +14,7 @@ public class UIMenu
 
         if(contrasena == "1234" && usuario == "Cabrera")
         {
+            Console.WriteLine("..::Bienvenido::..");
             UIMenuPrincipal();
         }   
         else
@@ -25,7 +26,6 @@ public class UIMenu
 
     public void UIMenuPrincipal()
     {
-        Console.WriteLine("..::Bienvenido::..");
         Console.WriteLine("1)Visualizar productos en el inventarios \n2)Agregar productos \n3)Eliminar productos \n4)ELIMINAR BASE DE DATOS >:) \n5)Salir");
         Console.WriteLine("");
         int opcion = Convert.ToInt32(Console.ReadLine());
@@ -35,7 +35,7 @@ public class UIMenu
         {
             case 1:LogicaDelMenu.ConsultarInventaraio();break;
             case 2:LogicaDelMenu.AgregarProductos();break;
-            case 3:/*aqui va una funcion */ ;break;
+            case 3:LogicaDelMenu.EliminarProducto() /*logica*/ ;break;
             case 4:/*aqui va una funcion */ ;break;
             case 5:/*aqui va una funcion */ ;break;
             default: Console.WriteLine("Ingrese solo las opciones mencionadas");break;

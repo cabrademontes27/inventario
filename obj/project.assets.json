@@ -1702,23 +1702,23 @@
   },
   "projectFileDependencyGroups": {
     "net8.0": [
-      "MySql.Data >= 8.0.33"
+      "MySql.Data >= 8.0.*"
     ]
   },
   "packageFolders": {
-    "/home/luiscabrera/.nuget/packages/": {}
+    "C:\\Users\\lowwy\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/luiscabrera/Documentos/INVENTARIO/INVENTARIOC#.csproj",
+      "projectUniqueName": "C:\\Users\\lowwy\\OneDrive\\Escritorio\\INVENTARIO TEST\\inventario\\INVENTARIOC#.csproj",
       "projectName": "INVENTARIOC#",
-      "projectPath": "/home/luiscabrera/Documentos/INVENTARIO/INVENTARIOC#.csproj",
-      "packagesPath": "/home/luiscabrera/.nuget/packages/",
-      "outputPath": "/home/luiscabrera/Documentos/INVENTARIO/obj/",
+      "projectPath": "C:\\Users\\lowwy\\OneDrive\\Escritorio\\INVENTARIO TEST\\inventario\\INVENTARIOC#.csproj",
+      "packagesPath": "C:\\Users\\lowwy\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\lowwy\\OneDrive\\Escritorio\\INVENTARIO TEST\\inventario\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/luiscabrera/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\lowwy\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -1736,6 +1736,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -1744,7 +1749,7 @@
         "dependencies": {
           "MySql.Data": {
             "target": "Package",
-            "version": "[8.0.33, )"
+            "version": "[8.0.*, )"
           }
         },
         "imports": [
@@ -1763,7 +1768,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.108/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
