@@ -36,8 +36,8 @@ public class UIMenu
             case 1:LogicaDelMenu.ConsultarInventaraio();break;
             case 2:LogicaDelMenu.AgregarProductos();break;
             case 3:LogicaDelMenu.EliminarProducto() /*logica*/ ;break;
-            case 4:/*aqui va una funcion */ ;break;
-            case 5:/*aqui va una funcion */ ;break;
+            case 4:LogicaDelMenu.EliminarDB();break;
+            case 5:LogicaDelMenu.Salir();break;
             default: Console.WriteLine("Ingrese solo las opciones mencionadas");break;
         }
     }
