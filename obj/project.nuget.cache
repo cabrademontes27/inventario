@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "mj1/fqL8+k4=",
+  "dgSpecHash": "OYd3F2xxXT0=",
   "success": true,
-  "projectFilePath": "C:\\Users\\lowwy\\OneDrive\\Documentos\\INVENTARIOC#\\INVENTARIOC#.csproj",
+  "projectFilePath": "C:\\Users\\lowwy\\OneDrive\\Escritorio\\INVENTARIO TEST\\inventario\\INVENTARIOC#.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\lowwy\\.nuget\\packages\\google.protobuf\\3.21.9\\google.protobuf.3.21.9.nupkg.sha512",
     "C:\\Users\\lowwy\\.nuget\\packages\\k4os.compression.lz4\\1.3.5\\k4os.compression.lz4.1.3.5.nupkg.sha512",

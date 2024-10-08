@@ -1,65 +1,116 @@
 using System;
+using System.Collections;
+using ValidarDatos;
+namespace Productos;
 
 
-public class Producto{
-
-
-    protected string? Nombre;
-    protected string? Precio;
-    protected string? caducidad;
-    protected string? Provedor;
-
-    /*
-    public Producto(string? _nombreProducto, int? _precioProducto, string? _caducidadProducto, string? _provedorProducto){
-        this.Nombre = _nombreProducto;
-        this.Precio = _precioProducto;
-        this.caducidad = _caducidadProducto;
-        this.Provedor = _provedorProducto;
-    }
-    */
+public class Producto
+{
+    private String Nombre = "";
+    private double Precio = 0.0;
+    private String  Categoria ="";
+    private DateTime FechaIngreso; 
     
-
-
-    public void IntegrarProducto(){
-        bool validar1 = true;
-        bool validar2 = true;
-        bool validar3 = true;
-
-
-
-        while(validar1){
-            Console.WriteLine("Nombre del producto");
-            Nombre = Console.ReadLine();
-
-            if(!string.IsNullOrEmpty(Nombre) && validarInformacion.Nombres(Nombre)){
-                Console.WriteLine("Se agrego correctamente el producto");
-                validar1 = false;
-            }else{
-                Console.WriteLine("El texto contiene caracteres raros o esta ingresando texto vacio, intentelo nuevamente");
-            }
-        }
-        
-        while(validar2){
-            Console.WriteLine("precio del producto");
-            Precio = Console.ReadLine();
-
-            if(!string.IsNullOrEmpty(Precio) && validarInformacion.Numeros(Precio)){
-                Console.WriteLine("Se agrego correctamente el precio del producto");
-                validar1 = false;
-            }else{
-                Console.WriteLine("El precio contiene caracteres raros o esta ingresando texto vacio, intentelo nuevamente");
-            }
-        }
-        //este sera sobre provedor, pero no entiendo como se supone si en una base de datos esta clase o aqui seria su llave foranea de la clase provedor 
-        //deberia hacer que reciviera o una comparacion y si es alguno de los provedores, asignarle un id ????/
-        while(validar3){
-            
-        }
-
-
-
-
-
-
+    List<Producto> MisProductos = new List<Producto>();
+    
+    public Producto(String Nombre, double Precio,String Categoria, DateTime FechaIngreso)
+    {
+        this.Nombre = Nombre;
+        this.Precio = Precio;
+        this.Categoria = Categoria;
+        this.FechaIngreso = FechaIngreso;
     }
+
+    public Producto(String Nombre, double Precio,String Categoria)
+    {
+        this.Nombre = Nombre;
+        this.Precio = Precio;
+        this.Categoria = Categoria;
+    }
+
+    public Producto(String Nombre, double Precio)
+    {
+        this.Nombre = Nombre;
+        this.Precio = Precio;
+    }
+
+    public Producto()
+    {
+        
+    }
+
+
+    //get y set
+    public String GetNombreProducto()
+    {
+        return this.Nombre;
+    }
+
+    public double GetPrecioProducto()
+    {
+        return this.Precio;
+    }
+    public String GetCategoriaProducto()
+    {
+        return this.Categoria;
+    }
+    public DateTime GetFechaIngresoProducto()
+    {
+        return this.FechaIngreso;
+    }
+
+    public void setNombreProducto(String Nombre)
+    {
+        this.Nombre = Nombre;
+    }
+
+    public void setPrecioProducto(double Precio)
+    {
+        this.Precio = Precio;
+    }
+
+    public void setCategoriaProducto(String Categoria)
+    {
+        this.Categoria = Categoria;
+    }
+
+    public void setFechaIngresoProducto(DateTime FechaIngreso)
+    {
+        this.FechaIngreso = FechaIngreso;
+    }
+
+
+
+    public void AñadirProductosLista(String Nombre, double Precio,String Categoria, DateTime FechaIngreso)
+    {
+        MisProductos.Add(new Producto(Nombre,Precio,Categoria,FechaIngreso));
+    }
+    public void AñadirProductosLista(String Nombre, double Precio,String Categoria)
+    {
+        MisProductos.Add(new Producto(Nombre,Precio,Categoria));
+    }
+    public void AñadirProductosLista(String Nombre, double Precio)
+    {
+        MisProductos.Add(new Producto(Nombre,Precio));
+    }
+
+
+    public void AñadirProductoLista(Producto producto)
+    {
+        MisProductos.Add(new Producto(producto.GetNombreProducto(),producto.GetPrecioProducto(),producto.GetCategoriaProducto(),producto.GetFechaIngresoProducto()));
+    }
+
+
+
+
+
 }
+
+
+
+
+
+
+
+
+

@@ -1702,7 +1702,7 @@
   },
   "projectFileDependencyGroups": {
     "net8.0": [
-      "MySql.Data >= 8.0.33"
+      "MySql.Data >= 8.0.*"
     ]
   },
   "packageFolders": {
@@ -1711,11 +1711,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\lowwy\\OneDrive\\Documentos\\INVENTARIOC#\\INVENTARIOC#.csproj",
+      "projectUniqueName": "C:\\Users\\lowwy\\OneDrive\\Escritorio\\INVENTARIO TEST\\inventario\\INVENTARIOC#.csproj",
       "projectName": "INVENTARIOC#",
-      "projectPath": "C:\\Users\\lowwy\\OneDrive\\Documentos\\INVENTARIOC#\\INVENTARIOC#.csproj",
+      "projectPath": "C:\\Users\\lowwy\\OneDrive\\Escritorio\\INVENTARIO TEST\\inventario\\INVENTARIOC#.csproj",
       "packagesPath": "C:\\Users\\lowwy\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\lowwy\\OneDrive\\Documentos\\INVENTARIOC#\\obj\\",
+      "outputPath": "C:\\Users\\lowwy\\OneDrive\\Escritorio\\INVENTARIO TEST\\inventario\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\lowwy\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -1749,7 +1749,7 @@
         "dependencies": {
           "MySql.Data": {
             "target": "Package",
-            "version": "[8.0.33, )"
+            "version": "[8.0.*, )"
           }
         },
         "imports": [

@@ -1,5 +1,5 @@
 using System;
-
+namespace ValidarDatos;
 
 public static class validarInformacion{
 
@@ -31,7 +31,7 @@ public static class validarInformacion{
         }  
     }
 
-    public static bool Numeros(string numeros){
+    public static bool Precios(string numeros){
         char[] numerosValidos = {'0','1','2','3','4','5','6','7','8','9'};
         
         int longitud = numeros.Length;
@@ -45,9 +45,44 @@ public static class validarInformacion{
         }else{
             return false;
         }
-
-        
     }
+
+    public static bool numerosValidos(string numeros){
+        char[] arregloNumerosValidos = {'0','1','2','3','4','5','6','7','8','9'};
+        
+       
+        if(numeros != null){
+            foreach(char c in numeros){
+                if(Array.IndexOf(arregloNumerosValidos, c) == -1){
+                return false;
+            }
+        }
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    public static bool NumerosNulosVacios(string opcion)
+    {
+         if((string.IsNullOrEmpty(opcion)) == false)
+        {
+            if((validarInformacion.numerosValidos(opcion)) == true)
+            {
+                return false;
+            }else{Console.WriteLine("El dato ingresado contien caracteres raros, intete nuevamente"); return true;}
+        }else{Console.WriteLine("El valor es nulo o contiene nada, intente nuevamente"); return true;}
+    }
+
+    public static String FechaParciada(String fechaIngresada)
+    {
+        DateTime fecha = DateTime.Parse(fechaIngresada);
+        
+        
+       return fecha.ToString("dd/MM/yyyy");
+    }
+
+    
 
 
 
