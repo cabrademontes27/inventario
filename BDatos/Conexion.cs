@@ -3,61 +3,63 @@ using System;
 using MySql.Data.MySqlClient;
 using Org.BouncyCastle.Cms;
 using Productos;
+namespace Conexion;
 
 
-public static class conexionSQL{
+public static class conexionSQL
+{
 
 
-    public static void AnadirProductos(string Nombre, string Categoria, string Precio)
+    public static void AnadirProductos(string Nombre, string Categoria, double Precio)
     {
         DateTime Fecha_Ingreso = DateTime.Now;
         string Conexion = "Server=localhost;Database=INVENTARIO;User ID=root;Password= ;SslMode=none";
-        
-        using(MySqlConnection conexion1 = new MySqlConnection(Conexion))
+
+        using (MySqlConnection conexion1 = new MySqlConnection(Conexion))
         {
             try
             {
                 conexion1.Open();
                 string consulta = $"INSERT INTO PRODUCTO(Nombre, categoria,Precio,Fecha_ingreso) VALUES(@Nombre, @Categoria,@Precio,@Fecha_Ingreso)";
-                
-                using(MySqlCommand ejercutarConsulta = new MySqlCommand(consulta,conexion1))
+
+                using (MySqlCommand ejercutarConsulta = new MySqlCommand(consulta, conexion1))
                 {
-                    ejercutarConsulta.Parameters.AddWithValue("@Nombre",Nombre);
-                    ejercutarConsulta.Parameters.AddWithValue("@Categoria",Categoria);
-                    ejercutarConsulta.Parameters.AddWithValue("@Precio",Precio);
-                    ejercutarConsulta.Parameters.AddWithValue("@Fecha_Ingreso",Fecha_Ingreso);
+                    ejercutarConsulta.Parameters.AddWithValue("@Nombre", Nombre);
+                    ejercutarConsulta.Parameters.AddWithValue("@Categoria", Categoria);
+                    ejercutarConsulta.Parameters.AddWithValue("@Precio", Precio);
+                    ejercutarConsulta.Parameters.AddWithValue("@Fecha_Ingreso", Fecha_Ingreso);
 
                 }
 
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Console.WriteLine($"Ocurrio algo inesperado {ex}");
             }
         }
     }
 
-     public static void AnadirProductos(Producto producto)
+    public static void AnadirProductos(Producto producto)
     {
         string Conexion = "Server=localhost;Database=INVENTARIO;User ID=root;Password= ;SslMode=none";
-        
-        using(MySqlConnection conexion1 = new MySqlConnection(Conexion))
+
+        using (MySqlConnection conexion1 = new MySqlConnection(Conexion))
         {
             try
             {
                 conexion1.Open();
                 string consulta = $"INSERT INTO PRODUCTO(Nombre,Categoria,Precio,Fecha_ingreso) VALUES(@Nombre,@Categoria,@Precio,@Fecha_Ingreso)";
-                
-                using(MySqlCommand ejercutarConsulta = new MySqlCommand(consulta,conexion1))
+
+                using (MySqlCommand ejercutarConsulta = new MySqlCommand(consulta, conexion1))
                 {
-                    ejercutarConsulta.Parameters.AddWithValue("@Nombre",producto.GetNombreProducto());
-                    ejercutarConsulta.Parameters.AddWithValue("@Categoria",producto.GetCategoriaProducto());
-                    ejercutarConsulta.Parameters.AddWithValue("@Precio",producto.GetPrecioProducto());
-                    ejercutarConsulta.Parameters.AddWithValue("@Fecha_Ingreso",producto.GetFechaIngresoProducto());
+                    ejercutarConsulta.Parameters.AddWithValue("@Nombre", producto.GetNombreProducto());
+                    ejercutarConsulta.Parameters.AddWithValue("@Categoria", producto.GetCategoriaProducto());
+                    ejercutarConsulta.Parameters.AddWithValue("@Precio", producto.GetPrecioProducto());
+                    ejercutarConsulta.Parameters.AddWithValue("@Fecha_Ingreso", producto.GetFechaIngresoProducto());
                 }
 
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Console.WriteLine($"Ocurrio algo inesperado {ex}");
             }
@@ -70,33 +72,33 @@ public static class conexionSQL{
     {
         string Conexion = "Server=localhost;Database=INVENTARIO;User ID=root;Password= ;SslMode=none";
 
-        //es usado para que cuando el objeto o funcion deja de usarse 
+        //es usado para que cuando el objeto o funcion deja de usarse
         //se cierre una vez terminado el bloque
-        using(MySqlConnection conexion1 = new MySqlConnection(Conexion))
+        using (MySqlConnection conexion1 = new MySqlConnection(Conexion))
         {
             try
             {
                 conexion1.Open();
                 string consulta = "SELECT Nombre,categoria,Precio,Fecha_ingreso FROM PRODUCTO";
-                MySqlCommand ejecutarConsulta = new MySqlCommand(consulta,conexion1);
+                MySqlCommand ejecutarConsulta = new MySqlCommand(consulta, conexion1);
 
-                using(MySqlDataReader almacenaConsulta = ejecutarConsulta.ExecuteReader())
+                using (MySqlDataReader almacenaConsulta = ejecutarConsulta.ExecuteReader())
                 {
-                    while(almacenaConsulta.Read())
+                    while (almacenaConsulta.Read())
                     {
-                       Console.WriteLine($"Nombre:  {almacenaConsulta.GetString(0)}");
-                       Console.WriteLine($"Categoria: {almacenaConsulta.GetString(1)}");
-                       Console.WriteLine($"Precio: {almacenaConsulta.GetString(2)}");
-                       Console.WriteLine($"Fecha de ingreso: {almacenaConsulta.GetString(3)}");
-                       Console.WriteLine("\n ");
+                        Console.WriteLine($"Nombre:  {almacenaConsulta.GetString(0)}");
+                        Console.WriteLine($"Categoria: {almacenaConsulta.GetString(1)}");
+                        Console.WriteLine($"Precio: {almacenaConsulta.GetString(2)}");
+                        Console.WriteLine($"Fecha de ingreso: {almacenaConsulta.GetString(3)}");
+                        Console.WriteLine("\n ");
                     }
                 }
 
-            }   
-            catch(Exception ex)
+            }
+            catch (Exception ex)
             {
-                Console.WriteLine($"Ocurrio algo inesperado: {ex}" );
-            }     
+                Console.WriteLine($"Ocurrio algo inesperado: {ex}");
+            }
         }
     }
 }
@@ -143,4 +145,4 @@ public static class conexionSQL{
 
 }
 */
-// modificar esta clase para que haga la conexion con cualquier dato que entre o sea cambiar todo 
+// modificar esta clase para que haga la conexion con cualquier dato que entre o sea cambiar todo

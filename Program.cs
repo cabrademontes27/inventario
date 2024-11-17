@@ -1,15 +1,11 @@
-﻿using System;
+using System;
 using Productos;
 
-class Program{
+class Program
+{
 
-    public static void Main(){
-        
-    UIMenu uIMenuPrincipal = new UIMenu();
-
-    uIMenuPrincipal.UIInicioDeSesion();
-
-        
+    public static void Main()
+    {
+        UIMenu.UIInicioDeSesion();
     }
 }
-
