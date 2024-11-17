@@ -16,6 +16,8 @@ public static class LogicaDelMenu
         bool bandera = true;
         Producto producto = new Producto();
         UIMenu uIMenu = new UIMenu();
+
+        
         string? nombre,precio,categoria,contrasena;
         DateTime Fecha_ingreso = DateTime.Now;
         List<Producto> ListaTemporal = new List<Producto>();

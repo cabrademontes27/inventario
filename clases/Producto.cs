@@ -11,8 +11,6 @@ public class Producto
     private String  Categoria ="";
     private DateTime FechaIngreso; 
     
-    List<Producto> MisProductos = new List<Producto>();
-    
     public Producto(String Nombre, double Precio,String Categoria, DateTime FechaIngreso)
     {
         this.Nombre = Nombre;
@@ -79,31 +77,9 @@ public class Producto
         this.FechaIngreso = FechaIngreso;
     }
 
-
-
-    public void AñadirProductosLista(String Nombre, double Precio,String Categoria, DateTime FechaIngreso)
-    {
-        MisProductos.Add(new Producto(Nombre,Precio,Categoria,FechaIngreso));
+    public String mostrar(){
+        return "Nombre: " + GetNombreProducto() + " Precio: " + GetPrecioProducto() + " Categoria " + GetCategoriaProducto() + "Fecha de ingreso: " + GetFechaIngresoProducto();
     }
-    public void AñadirProductosLista(String Nombre, double Precio,String Categoria)
-    {
-        MisProductos.Add(new Producto(Nombre,Precio,Categoria));
-    }
-    public void AñadirProductosLista(String Nombre, double Precio)
-    {
-        MisProductos.Add(new Producto(Nombre,Precio));
-    }
-
-
-    public void AñadirProductoLista(Producto producto)
-    {
-        MisProductos.Add(new Producto(producto.GetNombreProducto(),producto.GetPrecioProducto(),producto.GetCategoriaProducto(),producto.GetFechaIngresoProducto()));
-    }
-
-
-
-
-
 }
 
 
