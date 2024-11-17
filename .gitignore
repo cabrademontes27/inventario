@@ -1,0 +1,5 @@
+# se supone que ignora toda la carpeta y sus archivos
+bin/
+obj/
+
+
